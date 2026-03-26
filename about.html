@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About — /RedSlash Studio</title>
+    <meta name="description" content="Twenty years at the BBC and Channel 4. Now building broadcast-quality brands for ambitious businesses — with the people and the approach to back it up.">
+    <meta name="theme-color" content="#0A0A0A">
+    <link rel="icon" type="image/png" href="assets/favicon.png">
+    <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="About — /RedSlash Studio">
+    <meta property="og:description" content="Twenty years at the BBC and Channel 4. Now building broadcast-quality brands for ambitious businesses.">
+    <meta property="og:image" content="https://redslashstudio.com/assets/og-image.png">
+    <meta property="og:url" content="https://redslashstudio.com/about.html">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="shared.css">
+    <style>
+        /* === HERO === */
+        .hero {
+            min-height: 80vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            padding: 160px 48px 100px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-family: var(--display);
+            font-size: clamp(40px, 6vw, 72px);
+            font-weight: 800;
+            letter-spacing: -0.03em;
+            line-height: 1.08;
+            color: var(--text-warm);
+            max-width: 800px;
+            margin-bottom: 32px;
+        }
+
+        .hero-sub {
+            font-size: clamp(17px, 2vw, 20px);
+            font-weight: 300;
+            line-height: 1.65;
+            color: var(--text-secondary);
+            max-width: 580px;
+        }
+
+        /* === STORY === */
+        .story {
+            padding: 120px 48px;
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: start;
+        }
+
+        .story-image {
+            position: sticky;
+            top: 120px;
+        }
+
+        .story-image img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            mix-blend-mode: lighten;
+        }
+
+        .story-text h2 {
+            font-family: var(--display);
+            font-size: clamp(28px, 3.5vw, 40px);
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            line-height: 1.2;
+            color: var(--text-warm);
+            margin-bottom: 32px;
+        }
+
+        .story-text p {
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 1.75;
+            color: var(--text-secondary);
+            margin-bottom: 24px;
+        }
+
+        .story-text p:last-of-type {
+            margin-bottom: 0;
+        }
+
+        .story-brands {
+            margin-top: 48px;
+        }
+
+        .story-brands-label {
+            font-size: 11px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.14em;
+            color: var(--text-muted);
+            margin-bottom: 16px;
+        }
+
+        .brand-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .brand-tag {
+            font-size: 13px;
+            font-weight: 500;
+            color: var(--text-secondary);
+            background: var(--surface);
+            border: 1px solid var(--border);
+            padding: 6px 14px;
+            border-radius: 3px;
+        }
+
+        /* === APPROACH === */
+        .approach {
+            background: var(--off-white);
+            padding: 120px 48px;
+        }
+
+        .approach-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .approach h2 {
+            font-family: var(--display);
+            font-size: clamp(28px, 3.5vw, 40px);
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            line-height: 1.2;
+            color: var(--near-black);
+            margin-bottom: 20px;
+        }
+
+        .approach-intro {
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 1.75;
+            color: #5A5750;
+            max-width: 640px;
+            margin-bottom: 64px;
+        }
+
+        .approach-steps {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 48px;
+        }
+
+        .approach-step-label {
+            font-family: var(--display);
+            font-size: 16px;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            margin-bottom: 16px;
+        }
+
+        .approach-step-label .prefix {
+            color: var(--red);
+            font-weight: 800;
+            margin-right: 0.08em;
+        }
+
+        .approach-step-label .fixed {
+            color: var(--near-black);
+        }
+
+        .approach-step-label .variable {
+            font-weight: 500;
+            color: #8A857F;
+        }
+
+        .approach-step h3 {
+            font-family: var(--display);
+            font-size: 22px;
+            font-weight: 700;
+            letter-spacing: -0.01em;
+            color: var(--near-black);
+            margin-bottom: 12px;
+        }
+
+        .approach-step p {
+            font-size: 15px;
+            font-weight: 400;
+            line-height: 1.7;
+            color: #5A5750;
+        }
+
+        /* === PARTNERS === */
+        .partners {
+            padding: 120px 48px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .partner-block {
+            display: grid;
+            grid-template-columns: 1fr 360px;
+            gap: 80px;
+            align-items: start;
+            padding: 64px 0;
+            border-top: 1px solid var(--border);
+        }
+
+        .partner-block:last-of-type {
+            border-bottom: 1px solid var(--border);
+        }
+
+        .partner-editorial h3 {
+            font-family: var(--display);
+            font-size: clamp(24px, 3vw, 32px);
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            line-height: 1.2;
+            color: var(--text-warm);
+            margin-bottom: 24px;
+        }
+
+        .partner-editorial p {
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 1.75;
+            color: var(--text-secondary);
+            margin-bottom: 16px;
+        }
+
+        .partner-editorial p:last-child {
+            margin-bottom: 0;
+        }
+
+        .partner-aside {
+            padding-top: 8px;
+        }
+
+        .partner-aside img {
+            max-width: 100%;
+            height: auto;
+            opacity: 0.7;
+            margin-bottom: 32px;
+        }
+
+        .partner-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--text-warm);
+            text-decoration: none;
+            padding: 10px 20px;
+            border: 1px solid var(--border);
+            border-radius: 4px;
+            transition: all 0.25s ease;
+        }
+
+        .partner-link:hover {
+            border-color: var(--text-secondary);
+            background: var(--surface);
+        }
+
+        .partner-link .arrow {
+            transition: transform 0.25s ease;
+        }
+
+        .partner-link:hover .arrow {
+            transform: translateX(4px);
+        }
+
+        /* === RESPONSIVE === */
+        @media (max-width: 900px) {
+            .story {
+                grid-template-columns: 1fr;
+                gap: 48px;
+                padding: 80px 24px;
+            }
+            .story-image {
+                position: static;
+                max-width: 400px;
+            }
+            .approach { padding: 80px 24px; }
+            .approach-steps {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            .partners { padding: 80px 24px; }
+            .partner-block {
+                grid-template-columns: 1fr;
+                gap: 32px;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .hero { padding: 120px 24px 60px; }
+            .hero h1 { font-size: 36px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAV -->
+    <nav id="nav">
+        <a href="index.html" class="nav-logo"><span class="prefix">/</span>RedSlash</a>
+        <button class="nav-hamburger" aria-label="Menu">
+            <span></span><span></span><span></span>
+        </button>
+        <div class="nav-links">
+            <a href="index.html#work">Work</a>
+            <a href="how-it-works.html">How It Works</a>
+            <a href="faq.html">Q&amp;A</a>
+            <a href="about.html" class="nav-current">About</a>
+            <a href="#contact" class="nav-cta">Get in Touch</a>
+        </div>
+    </nav>
+
+    <!-- S1: HERO -->
+    <section class="hero">
+        <p class="section-label reveal">About</p>
+        <h1 class="reveal">Most businesses don't have a creative problem. They have a&nbsp;clarity&nbsp;problem.</h1>
+        <p class="hero-sub reveal">They know something isn't working — the website feels off, the message isn't landing, the brand doesn't match the ambition. They just can't see where the gap is.</p>
+    </section>
+
+    <!-- S2: THE STORY -->
+    <section class="story">
+        <div class="story-image reveal">
+            <img src="assets/charlie-portrait.png" alt="Charlie Palmer">
+        </div>
+        <div class="story-text">
+            <h2 class="reveal">I find the gap. Then I close&nbsp;it.</h2>
+
+            <p class="reveal">I spent twenty years at the BBC and Channel 4, working across some of the biggest brands in British broadcasting. Launching shows, building campaigns, figuring out how to make millions of people pay attention to something new.</p>
+
+            <p class="reveal">What I learned is that great creative starts with diagnosis — understanding who you're talking to, what they need to hear, and why what you're currently saying isn't landing. The execution follows from that.</p>
+
+            <p class="reveal">Now I use that experience to help ambitious businesses access the same quality of thinking that big organisations take for granted. Not by building an agency — by building an approach that delivers the same rigour, faster and at a fraction of the cost.</p>
+
+            <div class="story-brands reveal">
+                <p class="story-brands-label">Brands I've worked on</p>
+                <div class="brand-tags">
+                    <span class="brand-tag">Channel 4</span>
+                    <span class="brand-tag">E4</span>
+                    <span class="brand-tag">4oD</span>
+                    <span class="brand-tag">BBC Radio 1</span>
+                    <span class="brand-tag">BBC Radio 1Xtra</span>
+                    <span class="brand-tag">Black Mirror</span>
+                    <span class="brand-tag">Misfits</span>
+                    <span class="brand-tag">The Inbetweeners</span>
+                    <span class="brand-tag">Derren Brown</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- S3: THE APPROACH -->
+    <section class="approach">
+        <div class="approach-inner">
+            <p class="section-label reveal" style="color: var(--red);">The Approach</p>
+            <h2 class="reveal">Diagnosis first. Then&nbsp;delivery.</h2>
+            <p class="approach-intro reveal">Every project follows the same discipline — whether it's a full brand build or a single page. The quality of the output depends on the quality of the thinking that goes in.</p>
+
+            <div class="approach-steps">
+                <div class="approach-step reveal">
+                    <p class="approach-step-label"><span class="prefix">/</span><span class="fixed">RedSlash</span><span class="variable">Audience</span></p>
+                    <h3>Understand the audience</h3>
+                    <p>Who are you actually trying to reach? Not the broadest possible market — the specific people whose attention you need. Everything flows from getting this right.</p>
+                </div>
+                <div class="approach-step reveal">
+                    <p class="approach-step-label"><span class="prefix">/</span><span class="fixed">RedSlash</span><span class="variable">Brand</span></p>
+                    <h3>Diagnose the message</h3>
+                    <p>What are you currently saying — and what do those people actually need to hear? The gap between the two is where the work lives.</p>
+                </div>
+                <div class="approach-step reveal">
+                    <p class="approach-step-label"><span class="prefix">/</span><span class="fixed">RedSlash</span><span class="variable">Creative</span></p>
+                    <h3>Build at broadcast quality</h3>
+                    <p>Strategy means nothing without execution that delivers. The creative has to earn attention the same way a Channel 4 launch campaign does — by being impossible to ignore.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- S4: PARTNERS -->
+    <section class="partners">
+        <p class="section-label reveal">Who I Work With</p>
+
+        <!-- Audience Strategies -->
+        <div class="partner-block reveal">
+            <div class="partner-editorial">
+                <h3>Putting audiences at the heart of your&nbsp;brand</h3>
+                <p>Every Red Slash project starts with the audience. I build that thinking into every brief — but when a project needs deeper insight, richer data, or a full audience strategy, I work with the people who wrote the book on it.</p>
+                <p>Audience Strategies are specialists in turning audience data into growth strategy. They've worked with some of the biggest names in media, entertainment, and rights — and they bring the same rigour to ambitious businesses. When the context going into a project gets richer, the creative coming out of it gets sharper.</p>
+            </div>
+            <div class="partner-aside">
+                <img src="assets/H Audience Strategies White.png" alt="Audience Strategies">
+                <br>
+                <a href="https://audiencestrategies.com" target="_blank" rel="noopener" class="partner-link">What they do <span class="arrow">&rarr;</span></a>
+            </div>
+        </div>
+
+        <!-- Steadman -->
+        <div class="partner-block reveal">
+            <div class="partner-editorial">
+                <h3>Built by people who operationalise&nbsp;AI</h3>
+                <p>The approach behind Red Slash wasn't cobbled together. It was built with Steadman — a consultancy that helps organisations adopt AI in ways that actually stick. They're the people behind the methodology, the systems thinking, and the operational rigour that makes this work at a level one person couldn't achieve alone.</p>
+                <p>If your ambitions go beyond a new website — if you're thinking about how AI could transform how your team works — Steadman are the people I'd point you to. Anti-hype, human-first, and genuinely expert.</p>
+            </div>
+            <div class="partner-aside">
+                <img src="assets/steadman-wordmark-cream.png" alt="Steadman">
+                <br>
+                <a href="https://steadman.ai" target="_blank" rel="noopener" class="partner-link">How they work <span class="arrow">&rarr;</span></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- S5: CONTACT -->
+    <section class="contact" id="contact">
+        <div class="contact-inner">
+            <p class="section-label reveal">Get in Touch</p>
+            <h2 class="reveal">Tell me about<br>your business</h2>
+            <p class="contact-sub reveal">No pitch. No commitment. Just a conversation about where you are and what could be different.</p>
+
+            <a href="mailto:hello@redslashstudio.com" class="contact-email reveal">hello@redslashstudio.com</a>
+
+            <p class="contact-or reveal">or</p>
+
+            <form class="contact-form reveal" id="contact-form" action="https://formspree.io/f/mwvwedqe" method="POST">
+                <div class="form-group">
+                    <label for="name">Your Name</label>
+                    <input type="text" id="name" name="name" placeholder="Tom Richardson">
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" placeholder="tom@example.com">
+                </div>
+                <div class="form-group">
+                    <label for="message">What does your business do?</label>
+                    <textarea id="message" name="message" placeholder="Tell me a bit about your business and what you're looking for..."></textarea>
+                </div>
+                <button type="submit" class="form-submit">Send Message <span class="arrow">&rarr;</span></button>
+            </form>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-left">
+            <span class="footer-logo"><span class="prefix">/</span>RedSlash</span>
+            <span class="footer-divider"></span>
+            <span class="footer-partners-label">Built in partnership with</span>
+            <div class="footer-partners">
+                <a href="https://audiencestrategies.com" target="_blank" rel="noopener"><img src="assets/H Audience Strategies White.png" alt="Audience Strategies"></a>
+                <a href="https://steadman.ai" target="_blank" rel="noopener"><img src="assets/steadman-wordmark-cream.png" alt="Steadman"></a>
+            </div>
+        </div>
+        <span class="footer-copy">&copy; 2026 Red Slash Studio</span>
+    </footer>
+
+    <script>
+        // Nav scroll effect
+        const nav = document.getElementById('nav');
+        window.addEventListener('scroll', () => {
+            nav.classList.toggle('scrolled', window.scrollY > 60);
+        });
+
+        // Mobile menu
+        const hamburger = document.querySelector('.nav-hamburger');
+        const navLinks = document.querySelector('.nav-links');
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('open');
+            navLinks.classList.toggle('open');
+        });
+        navLinks.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('open');
+                navLinks.classList.remove('open');
+            });
+        });
+
+        // Scroll reveal
+        const reveals = document.querySelectorAll('.reveal');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1 });
+        reveals.forEach(el => observer.observe(el));
+    </script>
+</body>
+</html>
