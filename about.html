@@ -162,27 +162,13 @@
             gap: 48px;
         }
 
-        .approach-step-label {
-            font-family: var(--display);
-            font-size: 16px;
-            font-weight: 700;
-            letter-spacing: -0.02em;
-            margin-bottom: 16px;
-        }
-
-        .approach-step-label .prefix {
+        .approach-step .approach-step-number {
+            font-size: 11px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.14em;
             color: var(--red);
-            font-weight: 800;
-            margin-right: 0.08em;
-        }
-
-        .approach-step-label .fixed {
-            color: var(--near-black);
-        }
-
-        .approach-step-label .variable {
-            font-weight: 500;
-            color: #8A857F;
+            margin-bottom: 16px;
         }
 
         .approach-step h3 {
@@ -199,7 +185,9 @@
             font-weight: 400;
             line-height: 1.7;
             color: #5A5750;
+            margin-bottom: 20px;
         }
+
 
         /* === PARTNERS === */
         .partners {
@@ -312,20 +300,7 @@
 </head>
 <body>
 
-    <!-- NAV -->
-    <nav id="nav">
-        <a href="index.html" class="nav-logo"><span class="prefix">/</span>RedSlash</a>
-        <button class="nav-hamburger" aria-label="Menu">
-            <span></span><span></span><span></span>
-        </button>
-        <div class="nav-links">
-            <a href="index.html#work">Work</a>
-            <a href="how-it-works.html">How It Works</a>
-            <a href="faq.html">Q&amp;A</a>
-            <a href="about.html" class="nav-current">About</a>
-            <a href="#contact" class="nav-cta">Get in Touch</a>
-        </div>
-    </nav>
+    <nav id="nav"></nav>
 
     <!-- S1: HERO -->
     <section class="hero">
@@ -374,17 +349,17 @@
 
             <div class="approach-steps">
                 <div class="approach-step reveal">
-                    <p class="approach-step-label"><span class="prefix">/</span><span class="fixed">RedSlash</span><span class="variable">Audience</span></p>
+                    <p class="approach-step-number">01</p>
                     <h3>Understand the audience</h3>
                     <p>Who are you actually trying to reach? Not the broadest possible market — the specific people whose attention you need. Everything flows from getting this right.</p>
                 </div>
                 <div class="approach-step reveal">
-                    <p class="approach-step-label"><span class="prefix">/</span><span class="fixed">RedSlash</span><span class="variable">Brand</span></p>
+                    <p class="approach-step-number">02</p>
                     <h3>Diagnose the message</h3>
                     <p>What are you currently saying — and what do those people actually need to hear? The gap between the two is where the work lives.</p>
                 </div>
                 <div class="approach-step reveal">
-                    <p class="approach-step-label"><span class="prefix">/</span><span class="fixed">RedSlash</span><span class="variable">Creative</span></p>
+                    <p class="approach-step-number">03</p>
                     <h3>Build at broadcast quality</h3>
                     <p>Strategy means nothing without execution that delivers. The creative has to earn attention the same way a Channel 4 launch campaign does — by being impossible to ignore.</p>
                 </div>
@@ -454,51 +429,8 @@
         </div>
     </section>
 
-    <!-- FOOTER -->
-    <footer>
-        <div class="footer-left">
-            <span class="footer-logo"><span class="prefix">/</span>RedSlash</span>
-            <span class="footer-divider"></span>
-            <span class="footer-partners-label">Built in partnership with</span>
-            <div class="footer-partners">
-                <a href="https://audiencestrategies.com" target="_blank" rel="noopener"><img src="assets/H Audience Strategies White.png" alt="Audience Strategies"></a>
-                <a href="https://steadman.ai" target="_blank" rel="noopener"><img src="assets/steadman-wordmark-cream.png" alt="Steadman"></a>
-            </div>
-        </div>
-        <span class="footer-copy">&copy; 2026 Red Slash Studio</span>
-    </footer>
+    <footer></footer>
 
-    <script>
-        // Nav scroll effect
-        const nav = document.getElementById('nav');
-        window.addEventListener('scroll', () => {
-            nav.classList.toggle('scrolled', window.scrollY > 60);
-        });
-
-        // Mobile menu
-        const hamburger = document.querySelector('.nav-hamburger');
-        const navLinks = document.querySelector('.nav-links');
-        hamburger.addEventListener('click', () => {
-            hamburger.classList.toggle('open');
-            navLinks.classList.toggle('open');
-        });
-        navLinks.querySelectorAll('a').forEach(link => {
-            link.addEventListener('click', () => {
-                hamburger.classList.remove('open');
-                navLinks.classList.remove('open');
-            });
-        });
-
-        // Scroll reveal
-        const reveals = document.querySelectorAll('.reveal');
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
-            });
-        }, { threshold: 0.1 });
-        reveals.forEach(el => observer.observe(el));
-    </script>
+    <script src="shared.js"></script>
 </body>
 </html>
