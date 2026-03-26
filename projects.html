@@ -14,116 +14,127 @@
     <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="shared.css">
     <style>
-        /* === PROJECTS === */
+        /* === HERO === */
         .projects-hero {
             padding: 160px 48px 80px;
             max-width: 1200px;
             margin: 0 auto;
         }
 
+        /* === PROJECT CARDS === */
         .projects {
-            background: var(--near-black);
-            padding: 0 48px 120px;
+            padding: 0 48px 40px;
         }
 
-        .projects-inner {
+        .project-card {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 64px;
+            align-items: center;
             max-width: 1200px;
             margin: 0 auto;
+            padding: 80px 0;
+            border-top: 1px solid var(--border);
+            text-decoration: none;
+            color: inherit;
         }
 
-        .project {
-            margin-bottom: 80px;
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 0;
+        .project-card:first-child {
+            border-top: none;
         }
 
-        .project:last-child {
-            margin-bottom: 0;
+        .project-card.flipped {
+            direction: rtl;
         }
 
-        .project-image {
-            width: 100%;
+        .project-card.flipped > * {
+            direction: ltr;
+        }
+
+        .project-card-image {
             border-radius: 8px;
             overflow: hidden;
             background: var(--surface);
-            aspect-ratio: 16 / 9;
-            position: relative;
         }
 
-        .project-image iframe {
-            width: 142.85%;
-            height: 142.85%;
-            border: none;
-            pointer-events: none;
-            transform: scale(0.7);
-            transform-origin: top left;
+        .project-card-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.6s ease;
         }
 
-        .project-grid-two .project-image iframe {
-            width: 200%;
-            height: 200%;
-            transform: scale(0.5);
+        .project-card:hover .project-card-image img {
+            transform: scale(1.02);
         }
 
-        .project-info {
-            padding: 24px 0 0;
-            display: flex;
-            align-items: baseline;
-            justify-content: space-between;
-            gap: 24px;
+        .project-card-content {
+            max-width: 480px;
         }
 
-        .project-name {
-            font-family: var(--display);
-            font-size: 24px;
-            font-weight: 700;
-            letter-spacing: -0.01em;
-            color: var(--text-warm);
-        }
-
-        .project-desc {
-            font-size: 14px;
-            font-weight: 400;
-            color: var(--text-secondary);
-        }
-
-        .project-sector {
+        .project-card-sector {
             font-size: 12px;
             font-weight: 600;
             text-transform: uppercase;
-            letter-spacing: 0.1em;
+            letter-spacing: 0.14em;
             color: var(--text-muted);
-            white-space: nowrap;
+            margin-bottom: 16px;
         }
 
-        .project-grid-two {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 32px;
+        .project-card-name {
+            font-family: var(--display);
+            font-size: clamp(28px, 3.5vw, 40px);
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            line-height: 1.1;
+            color: var(--text-warm);
+            margin-bottom: 20px;
         }
 
-        .project-grid-two .project {
-            margin-bottom: 0;
+        .project-card-desc {
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 1.7;
+            color: var(--text-secondary);
+            margin-bottom: 24px;
         }
 
-        .project-grid-two .project-image {
-            aspect-ratio: 4 / 3;
+        .project-card-link {
+            font-size: 14px;
+            font-weight: 600;
+            letter-spacing: 0.06em;
+            color: var(--text-warm);
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .project-card-link .arrow {
+            transition: transform 0.25s ease;
+        }
+
+        .project-card:hover .project-card-link .arrow {
+            transform: translateX(4px);
         }
 
         /* === RESPONSIVE === */
         @media (max-width: 900px) {
             .projects-hero { padding: 140px 24px 60px; }
-            .projects { padding: 0 24px 80px; }
+            .projects { padding: 0 24px 40px; }
 
-            .project-grid-two {
+            .project-card {
                 grid-template-columns: 1fr;
-                gap: 60px;
+                gap: 32px;
+                padding: 60px 0;
             }
 
-            .project-info {
-                flex-direction: column;
-                gap: 4px;
+            .project-card.flipped {
+                direction: ltr;
+            }
+
+            .project-card-content {
+                max-width: none;
             }
         }
     </style>
@@ -141,66 +152,56 @@
 
     <!-- PROJECTS -->
     <section class="projects">
-        <div class="projects-inner">
 
-            <!-- Project 1: FFF — full width -->
-            <a href="projects/fighting-for-a-free-future.html" class="project reveal" style="text-decoration: none; color: inherit;">
-                <div class="project-image">
-                    <iframe src="https://redslashstudio.github.io/fighting-for-a-free-future/index.html" loading="lazy"></iframe>
-                </div>
-                <div class="project-info">
-                    <div>
-                        <span class="project-name">Fighting for a Free Future</span>
-                        <span class="project-desc"> — A political movement with real momentum, but a website that didn't show it. Rebuilt as a media brand.</span>
-                    </div>
-                    <span class="project-sector">Media</span>
-                </div>
-            </a>
-
-            <!-- Projects 2 & 3: side by side -->
-            <div class="project-grid-two reveal">
-                <div class="project">
-                    <div class="project-image">
-                        <iframe src="https://redslashstudio.github.io/mffreeman/" loading="lazy"></iframe>
-                    </div>
-                    <div class="project-info">
-                        <div>
-                            <span class="project-name">MF Freeman</span>
-                            <span class="project-desc"> — Zero-carbon homes. Award-winning developer.</span>
-                        </div>
-                        <span class="project-sector">Property</span>
-                    </div>
-                </div>
-
-                <div class="project">
-                    <div class="project-image">
-                        <iframe src="https://mrcharliepalmer.github.io/Your-ADHD-journey/" loading="lazy"></iframe>
-                    </div>
-                    <div class="project-info">
-                        <div>
-                            <span class="project-name">CareADHD</span>
-                            <span class="project-desc"> — Patient journey. Healthcare made human.</span>
-                        </div>
-                        <span class="project-sector">Healthcare</span>
-                    </div>
-                </div>
+        <!-- FFF -->
+        <a href="projects/fighting-for-a-free-future.html" class="project-card reveal">
+            <div class="project-card-image">
+                <img src="assets/projects/fff.png" alt="Fighting for a Free Future website" loading="lazy">
             </div>
-
-            <!-- Project 4: Podcast Show — full width -->
-            <div class="project reveal" style="margin-top: 80px;">
-                <div class="project-image">
-                    <iframe src="https://mrcharliepalmer.github.io/TPS26-website-redesign/index.html" loading="lazy"></iframe>
-                </div>
-                <div class="project-info">
-                    <div>
-                        <span class="project-name">The Podcast Show London</span>
-                        <span class="project-desc"> — 12-page festival site. 10,000 attendees. 450+ speakers.</span>
-                    </div>
-                    <span class="project-sector">Events</span>
-                </div>
+            <div class="project-card-content">
+                <p class="project-card-sector">Media</p>
+                <h3 class="project-card-name">Fighting for a Free&nbsp;Future</h3>
+                <p class="project-card-desc">A political movement with real momentum — 2,400 subscribers, two podcasts, a coalition of think tanks — but a website that didn't show any of it. Rebuilt as an editorial media brand.</p>
+                <span class="project-card-link">Read the case study <span class="arrow">&rarr;</span></span>
             </div>
+        </a>
 
+        <!-- The Podcast Show -->
+        <div class="project-card flipped reveal">
+            <div class="project-card-image">
+                <img src="assets/projects/tps26.png" alt="The Podcast Show London website" loading="lazy">
+            </div>
+            <div class="project-card-content">
+                <p class="project-card-sector">Events</p>
+                <h3 class="project-card-name">The Podcast Show&nbsp;London</h3>
+                <p class="project-card-desc">The world's largest podcast festival — 10,000 attendees, 450+ speakers, two days at the BDC. A 12-page site that needed to feel as big as the event itself.</p>
+            </div>
         </div>
+
+        <!-- CareADHD -->
+        <div class="project-card reveal">
+            <div class="project-card-image">
+                <img src="assets/projects/careadhd.png" alt="CareADHD website" loading="lazy">
+            </div>
+            <div class="project-card-content">
+                <p class="project-card-sector">Healthcare</p>
+                <h3 class="project-card-name">CareADHD</h3>
+                <p class="project-card-desc">A private ADHD clinic needed to reach people who weren't sure they had ADHD yet. Built the patient journey as the front door — not the clinical service list.</p>
+            </div>
+        </div>
+
+        <!-- MF Freeman -->
+        <div class="project-card flipped reveal">
+            <div class="project-card-image">
+                <img src="assets/projects/mffreeman.png" alt="MF Freeman website" loading="lazy">
+            </div>
+            <div class="project-card-content">
+                <p class="project-card-sector">Property</p>
+                <h3 class="project-card-name">MF Freeman</h3>
+                <p class="project-card-desc">An award-winning zero-carbon developer with sixty years of family heritage — but a website that looked like every other housebuilder. Repositioned around what makes them different.</p>
+            </div>
+        </div>
+
     </section>
 
     <!-- CONTACT -->
