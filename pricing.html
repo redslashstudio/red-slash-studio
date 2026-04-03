@@ -61,74 +61,11 @@
         }
 
         /* === INSIGHT — context > prompts === */
-        .insight {
-            background: var(--near-black);
-            padding: 120px 48px;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .insight::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
-            background-size: 256px;
-            pointer-events: none;
-            opacity: 0.5;
-        }
-
-        .insight-inner {
-            max-width: 720px;
-            margin: 0 auto;
-            position: relative;
-        }
-
-        .insight h2 {
-            font-family: var(--display);
-            font-size: clamp(28px, 3.5vw, 40px);
-            font-weight: 700;
-            letter-spacing: -0.02em;
-            line-height: 1.2;
-            color: var(--text-warm);
-            margin-bottom: 36px;
-        }
-
-        .insight-prose {
-            font-size: 17px;
-            font-weight: 400;
-            line-height: 1.85;
-            color: var(--text-secondary);
-        }
-
-        .insight-prose p {
-            margin-bottom: 24px;
-        }
-
-        .insight-prose p:last-child {
-            margin-bottom: 0;
-        }
-
-        .insight-prose strong {
-            color: var(--text-warm);
-            font-weight: 500;
-        }
 
         /* === THE BUILD — warm surface with grain === */
         .build {
             background: var(--surface);
             padding: 120px 48px;
-            position: relative;
-        }
-
-        .build::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.025'/%3E%3C/svg%3E");
-            background-size: 256px;
-            pointer-events: none;
-            opacity: 0.6;
         }
 
         .build-inner {
@@ -263,106 +200,11 @@
             color: var(--text-muted);
         }
 
-        .team-grid {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 0;
-        }
-
-        .team-card {
-            padding: 48px 40px;
-            border-top: 3px solid transparent;
-            transition: border-color 0.3s ease, background 0.3s ease;
-            position: relative;
-        }
-
-        .team-card::after {
-            content: '';
-            position: absolute;
-            top: 48px;
-            bottom: 48px;
-            right: 0;
-            width: 1px;
-            background: var(--border-light);
-        }
-
-        .team-card:last-child::after {
-            display: none;
-        }
-
-        .team-card:hover {
-            border-top-color: var(--red);
-            background: rgba(226, 54, 54, 0.03);
-        }
-
-        .team-card-label {
-            font-size: 12px;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.14em;
-            color: var(--text-muted);
-            margin-bottom: 20px;
-        }
-
-        .team-card h3 {
-            font-family: var(--display);
-            font-size: clamp(24px, 2.5vw, 30px);
-            letter-spacing: -0.01em;
-            margin-bottom: 24px;
-            line-height: 1.2;
-        }
-
-        .team-card h3 .prefix {
-            color: var(--red);
-            font-weight: 800;
-            margin-right: 0.08em;
-        }
-
-        .team-card h3 .fixed {
-            color: var(--black);
-            font-weight: 700;
-        }
-
-        .team-card h3 .variable {
-            color: var(--text-muted);
-            font-weight: 500;
-        }
-
-        .team-card-uses {
-            list-style: none;
-        }
-
-        .team-card-uses li {
-            font-size: 15px;
-            font-weight: 400;
-            line-height: 1.6;
-            color: var(--text-muted);
-            padding: 8px 0;
-            border-bottom: 1px solid rgba(0,0,0,0.06);
-        }
-
-        .team-card-uses li:last-child {
-            border-bottom: none;
-        }
 
         /* === DISCOVERY — dark on-ramp section === */
         .discovery {
             background: var(--near-black);
             padding: 120px 48px;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .discovery::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
-            background-size: 256px;
-            pointer-events: none;
-            opacity: 0.5;
         }
 
         .discovery-inner {
@@ -411,39 +253,11 @@
             margin-bottom: 40px;
         }
 
-        .discovery-cta {
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            font-family: var(--body);
-            font-size: 14px;
-            font-weight: 600;
-            letter-spacing: 0.06em;
-            color: var(--text-warm);
-            text-decoration: none;
-            padding: 14px 28px;
-            border: 1px solid var(--border);
-            border-radius: 4px;
-            transition: all 0.25s ease;
-        }
-
-        .discovery-cta:hover {
-            border-color: var(--text-secondary);
-            background: var(--surface);
-        }
-
-        .discovery-cta .arrow {
-            transition: transform 0.25s ease;
-        }
-
-        .discovery-cta:hover .arrow {
-            transform: translateX(4px);
-        }
 
         /* === RESPONSIVE === */
         @media (max-width: 900px) {
             .hero { padding: 140px 24px 80px; }
-            .insight { padding: 80px 24px; }
+
             .build { padding: 80px 24px; }
             .team { padding: 80px 24px; }
             .discovery { padding: 80px 24px; }
@@ -457,22 +271,6 @@
                 position: static;
             }
 
-            .team-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .team-card::after {
-                display: none;
-            }
-
-            .team-card {
-                padding: 32px 24px;
-                border-top: 1px solid var(--border-light);
-            }
-
-            .team-card:hover {
-                border-top-color: var(--border-light);
-            }
         }
 
         @media (max-width: 600px) {
@@ -492,7 +290,7 @@
     </section>
 
     <!-- S2: THE BUILD — upfront investment -->
-    <section class="build">
+    <section class="build grain-fine">
         <div class="build-inner">
             <div class="build-text reveal">
                 <p class="section-label">The Build</p>
@@ -535,11 +333,11 @@
             <p class="team-range-amount">From &pound;500/month</p>
         </div>
 
-        <div class="team-grid">
-            <div class="team-card reveal">
-                <p class="team-card-label">Your Strategist</p>
+        <div class="specialist-grid specialist-grid--light stagger-reveal" style="max-width: 1200px; margin: 0 auto;">
+            <div class="specialist-card reveal">
+                <p class="specialist-card-label">Your Strategist</p>
                 <h3><span class="prefix">/</span><span class="fixed">RedSlash</span><span class="variable">Audience</span></h3>
-                <ul class="team-card-uses">
+                <ul class="specialist-card-uses">
                     <li>Who should this pitch deck be talking&nbsp;to?</li>
                     <li>New service — how do we frame it for our primary&nbsp;customer?</li>
                     <li>Are our LinkedIn posts speaking to the right&nbsp;people?</li>
@@ -548,10 +346,10 @@
                 </ul>
             </div>
 
-            <div class="team-card reveal">
-                <p class="team-card-label">Your Brand Thinker</p>
+            <div class="specialist-card reveal">
+                <p class="specialist-card-label">Your Brand Thinker</p>
                 <h3><span class="prefix">/</span><span class="fixed">RedSlash</span><span class="variable">Brand</span></h3>
-                <ul class="team-card-uses">
+                <ul class="specialist-card-uses">
                     <li>This page copy doesn't feel like us — what's&nbsp;off?</li>
                     <li>What should our newsletter actually be&nbsp;saying?</li>
                     <li>Rewrite our boilerplate for a new&nbsp;partnership</li>
@@ -560,10 +358,10 @@
                 </ul>
             </div>
 
-            <div class="team-card reveal">
-                <p class="team-card-label">Your Creative Director</p>
+            <div class="specialist-card reveal">
+                <p class="specialist-card-label">Your Creative Director</p>
                 <h3><span class="prefix">/</span><span class="fixed">RedSlash</span><span class="variable">Creative</span></h3>
-                <ul class="team-card-uses">
+                <ul class="specialist-card-uses">
                     <li>Add a new section to the&nbsp;website</li>
                     <li>Design a pitch deck for&nbsp;Thursday</li>
                     <li>We want to try a new visual direction — what could that look&nbsp;like?</li>
@@ -575,7 +373,7 @@
     </section>
 
     <!-- S5: DISCOVERY SESSION — on-ramp for people not ready for the full build -->
-    <section class="discovery">
+    <section class="discovery grain">
         <div class="discovery-inner">
             <p class="section-label reveal">Not Ready for the Full Build?</p>
             <h2 class="reveal">Start with a Discovery&nbsp;Session.</h2>
@@ -585,55 +383,16 @@
                 <p>If you decide to go ahead with the build afterwards, <strong>the discovery fee comes off the total</strong>.</p>
             </div>
             <p class="discovery-price reveal">From around &pound;1,500</p>
-            <a href="#contact" class="discovery-cta reveal">Book a discovery session <span class="arrow">&rarr;</span></a>
+            <a href="mailto:hello@redslashstudio.com" class="cta-link reveal">Book a discovery session <span class="arrow">&rarr;</span></a>
         </div>
     </section>
 
     <!-- S6: CONTACT -->
-    <section class="contact" id="contact">
-        <div class="contact-inner">
-            <p class="section-label reveal">Get in Touch</p>
-            <h2 class="reveal">Let's talk about your&nbsp;brand.</h2>
-            <p class="contact-sub reveal">Tell me about your business. I'll tell you what's possible — and what it would take to get&nbsp;there.</p>
-            <a href="mailto:hello@redslashstudio.com" class="contact-email reveal">hello@redslashstudio.com</a>
-            <p class="contact-or reveal">or</p>
-            <form class="contact-form reveal" id="contact-form" action="https://formspree.io/f/mwvwedqe" method="POST">
-                <div class="form-group">
-                    <label for="name">Name</label>
-                    <input type="text" id="name" name="name" required>
-                </div>
-                <div class="form-group">
-                    <label for="email">Email</label>
-                    <input type="email" id="email" name="email" required>
-                </div>
-                <div class="form-group">
-                    <label for="message">Tell me about your business</label>
-                    <textarea id="message" name="message" required></textarea>
-                </div>
-                <button type="submit" class="form-submit">Send <span class="arrow">&rarr;</span></button>
-            </form>
-        </div>
-    </section>
+    <section class="contact" id="contact" data-heading="Let's talk about your&nbsp;brand." data-sub="Tell me about your business. I'll tell you what's possible — and what it would take to get&nbsp;there."></section>
 
     <footer></footer>
 
     <script src="shared.js"></script>
-    <script>
-        // Staggered team card reveals
-        const teamCards = document.querySelectorAll('.team-card.reveal');
-        const teamObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    const cards = entry.target.parentElement.querySelectorAll('.team-card');
-                    cards.forEach((card, i) => {
-                        setTimeout(() => card.classList.add('visible'), i * 150);
-                    });
-                    teamObserver.unobserve(entry.target);
-                }
-            });
-        }, { threshold: 0.1 });
-        if (teamCards.length) teamObserver.observe(teamCards[0]);
-    </script>
 
 </body>
 </html>

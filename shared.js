@@ -77,6 +77,37 @@
         `;
     }
 
+    // --- CONTACT SECTION ---
+    const contactEl = document.querySelector('.contact[data-heading]');
+    if (contactEl && !contactEl.children.length) {
+        const heading = contactEl.dataset.heading || 'Get in touch.';
+        const sub = contactEl.dataset.sub || 'No pitch. No commitment. Just a conversation about where you are and what could be different.';
+        contactEl.innerHTML = `
+            <div class="contact-inner">
+                <p class="section-label reveal">Get in Touch</p>
+                <h2 class="reveal">${heading}</h2>
+                <p class="contact-sub reveal">${sub}</p>
+                <a href="mailto:hello@redslashstudio.com" class="contact-email reveal">hello@redslashstudio.com</a>
+                <p class="contact-or reveal">or</p>
+                <form class="contact-form reveal" id="contact-form" action="https://formspree.io/f/mwvwedqe" method="POST">
+                    <div class="form-group">
+                        <label for="name">Your Name</label>
+                        <input type="text" id="name" name="name" placeholder="Tom Richardson">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" placeholder="tom@example.com">
+                    </div>
+                    <div class="form-group">
+                        <label for="message">What does your business do?</label>
+                        <textarea id="message" name="message" placeholder="Tell me a bit about your business and what you're looking for..."></textarea>
+                    </div>
+                    <button type="submit" class="form-submit">Send Message <span class="arrow">&rarr;</span></button>
+                </form>
+            </div>
+        `;
+    }
+
     // --- SCROLL REVEAL ---
     const reveals = document.querySelectorAll('.reveal');
     if (reveals.length) {
@@ -93,6 +124,24 @@
         });
         reveals.forEach(el => observer.observe(el));
     }
+
+    // --- STAGGERED CARD REVEAL ---
+    document.querySelectorAll('.stagger-reveal').forEach(grid => {
+        const cards = grid.querySelectorAll('.reveal');
+        if (!cards.length) return;
+        const staggerObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const siblings = entry.target.parentElement.querySelectorAll('.reveal');
+                    siblings.forEach((card, i) => {
+                        setTimeout(() => card.classList.add('visible'), i * 150);
+                    });
+                    staggerObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1 });
+        staggerObserver.observe(cards[0]);
+    });
 
     // --- FORM SUBMISSION ---
     const form = document.getElementById('contact-form');

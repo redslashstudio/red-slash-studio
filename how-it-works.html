@@ -119,18 +119,6 @@
         .problem {
             background: var(--near-black);
             padding: 120px 48px;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .problem::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
-            background-size: 256px;
-            pointer-events: none;
-            opacity: 0.5;
         }
 
         .problem-inner {
@@ -258,79 +246,6 @@
             margin: 0 auto;
         }
 
-        .lenses-grid {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 0;
-        }
-
-        .lens-card {
-            padding: 48px 40px;
-            border-top: 3px solid transparent;
-            transition: border-color 0.3s ease, background 0.3s ease;
-            position: relative;
-        }
-
-        .lens-card::after {
-            content: '';
-            position: absolute;
-            top: 48px;
-            bottom: 48px;
-            right: 0;
-            width: 1px;
-            background: var(--border-light);
-        }
-
-        .lens-card:last-child::after {
-            display: none;
-        }
-
-        .lens-card:hover {
-            border-top-color: var(--red);
-            background: rgba(226, 54, 54, 0.03);
-        }
-
-        .lens-card-label {
-            font-size: 12px;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.14em;
-            color: var(--text-muted);
-            margin-bottom: 20px;
-        }
-
-        .lens-card h3 {
-            font-family: var(--display);
-            font-size: clamp(24px, 2.5vw, 30px);
-            letter-spacing: -0.01em;
-            margin-bottom: 20px;
-            line-height: 1.2;
-        }
-
-        .lens-card h3 .prefix {
-            color: var(--red);
-            font-weight: 800;
-            margin-right: 0.08em;
-        }
-
-        .lens-card h3 .fixed {
-            color: var(--black);
-            font-weight: 700;
-        }
-
-        .lens-card h3 .variable {
-            color: var(--text-muted);
-            font-weight: 500;
-        }
-
-        .lens-card-body {
-            font-size: 15px;
-            font-weight: 400;
-            line-height: 1.7;
-            color: var(--text-muted);
-        }
 
         /* === DIALOGUE — scenario cards, split layout === */
         .scenario {
@@ -373,15 +288,6 @@
             background: var(--surface);
         }
 
-        .scenario--audience::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
-            background-size: 256px;
-            pointer-events: none;
-            opacity: 0.5;
-        }
 
         .scenario--brand {
             background: #0C0A09;
@@ -640,101 +546,6 @@
         }
 
         /* === THE BUILD — warm surface with grain === */
-        .build {
-            background: var(--surface);
-            padding: 120px 48px;
-            position: relative;
-        }
-
-        .build::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.025'/%3E%3C/svg%3E");
-            background-size: 256px;
-            pointer-events: none;
-            opacity: 0.6;
-        }
-
-        .build-inner {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 80px;
-            align-items: start;
-            position: relative;
-        }
-
-        .build-text {
-            position: sticky;
-            top: 120px;
-        }
-
-        .build-text h2 {
-            font-family: var(--display);
-            font-size: clamp(28px, 3.5vw, 40px);
-            font-weight: 700;
-            letter-spacing: -0.02em;
-            line-height: 1.2;
-            color: var(--text-warm);
-            margin-bottom: 28px;
-        }
-
-        .build-text p {
-            font-size: 16px;
-            font-weight: 400;
-            line-height: 1.75;
-            color: var(--text-secondary);
-            margin-bottom: 20px;
-        }
-
-        .build-text p:last-child {
-            margin-bottom: 0;
-        }
-
-        .build-steps {
-            display: flex;
-            flex-direction: column;
-            gap: 0;
-        }
-
-        .build-step {
-            display: grid;
-            grid-template-columns: 80px 1fr;
-            gap: 24px;
-            padding: 44px 0;
-            border-bottom: 1px solid var(--border);
-            align-items: start;
-        }
-
-        .build-step:first-child {
-            border-top: 1px solid var(--border);
-        }
-
-        .build-step-number {
-            font-family: var(--display);
-            font-size: 64px;
-            font-weight: 800;
-            letter-spacing: -0.03em;
-            line-height: 1;
-            color: var(--red);
-        }
-
-        .build-step h4 {
-            font-family: var(--display);
-            font-size: 22px;
-            font-weight: 700;
-            color: var(--text-warm);
-            margin-bottom: 8px;
-        }
-
-        .build-step p {
-            font-size: 15px;
-            font-weight: 400;
-            line-height: 1.65;
-            color: var(--text-secondary);
-        }
 
         /* === RESPONSIVE === */
         @media (max-width: 900px) {
@@ -744,24 +555,8 @@
             .lenses { padding: 80px 24px; }
             .scenario { padding: 80px 24px; }
             .dialogue-header { padding: 80px 24px 60px; }
-            .build { padding: 80px 24px; }
 
-            .lenses-grid {
-                grid-template-columns: 1fr;
-            }
 
-            .lens-card::after {
-                display: none;
-            }
-
-            .lens-card {
-                padding: 32px 24px;
-                border-top: 1px solid var(--border-light);
-            }
-
-            .lens-card:hover {
-                border-top-color: var(--border-light);
-            }
 
             .scenario-grid {
                 grid-template-columns: 1fr;
@@ -776,22 +571,6 @@
                 padding-left: 0;
             }
 
-            .build-inner {
-                grid-template-columns: 1fr;
-                gap: 48px;
-            }
-
-            .build-text {
-                position: static;
-            }
-
-            .build-step {
-                grid-template-columns: 56px 1fr;
-            }
-
-            .build-step-number {
-                font-size: 44px;
-            }
 
             .hero-typed {
                 padding: 16px 20px;
@@ -813,13 +592,6 @@
             .dialogue-prompt-content {
                 padding: 14px 16px;
             }
-            .build-step-number {
-                font-size: 36px;
-            }
-            .build-step {
-                grid-template-columns: 44px 1fr;
-                gap: 16px;
-            }
         }
     </style>
 </head>
@@ -835,7 +607,7 @@
     </section>
 
     <!-- S2: THE ENGAGEMENT -->
-    <section class="problem">
+    <section class="problem grain">
         <div class="problem-inner">
             <p class="section-label reveal">The Engagement</p>
             <h2 class="reveal">I understand who you are before I touch your&nbsp;brand.</h2>
@@ -854,23 +626,23 @@
             <p class="reveal">Once the foundation is built, I encode it into three AI specialists — trained on your business, your audience, and your visual identity. They're not generic. They're&nbsp;yours.</p>
         </div>
 
-        <div class="lenses-grid">
-            <div class="lens-card reveal">
-                <p class="lens-card-label">Your Strategist</p>
+        <div class="specialist-grid specialist-grid--light stagger-reveal" style="max-width: 1200px; margin: 0 auto;">
+            <div class="specialist-card reveal">
+                <p class="specialist-card-label">Your Strategist</p>
                 <h3><span class="prefix">/</span><span class="fixed">RedSlash</span><span class="variable">Audience</span></h3>
-                <p class="lens-card-body">Knows who you're talking to and what they need to hear. Explore who a new page should target, challenge whether your messaging is landing, or think through how to reach a new market. The strategist keeps everything&nbsp;honest.</p>
+                <p class="specialist-card-body">Knows who you're talking to and what they need to hear. Explore who a new page should target, challenge whether your messaging is landing, or think through how to reach a new market. The strategist keeps everything&nbsp;honest.</p>
             </div>
 
-            <div class="lens-card reveal">
-                <p class="lens-card-label">Your Brand Thinker</p>
+            <div class="specialist-card reveal">
+                <p class="specialist-card-label">Your Brand Thinker</p>
                 <h3><span class="prefix">/</span><span class="fixed">RedSlash</span><span class="variable">Brand</span></h3>
-                <p class="lens-card-body">Knows what your business needs to say and how to say it. Talk through what a new page should communicate, debate the right messaging, or work out why something isn't landing. The brand thinker keeps you&nbsp;sharp.</p>
+                <p class="specialist-card-body">Knows what your business needs to say and how to say it. Talk through what a new page should communicate, debate the right messaging, or work out why something isn't landing. The brand thinker keeps you&nbsp;sharp.</p>
             </div>
 
-            <div class="lens-card reveal">
-                <p class="lens-card-label">Your Creative Director</p>
+            <div class="specialist-card reveal">
+                <p class="specialist-card-label">Your Creative Director</p>
                 <h3><span class="prefix">/</span><span class="fixed">RedSlash</span><span class="variable">Creative</span></h3>
-                <p class="lens-card-body">Knows your visual language and makes sure everything belongs. Explore a new direction, build a page, get a second opinion on a design — anything that represents your brand gets broadcast-quality&nbsp;treatment.</p>
+                <p class="specialist-card-body">Knows your visual language and makes sure everything belongs. Explore a new direction, build a page, get a second opinion on a design — anything that represents your brand gets broadcast-quality&nbsp;treatment.</p>
             </div>
         </div>
     </section>
@@ -915,7 +687,7 @@
     </section>
 
     <!-- Scene 2: Audience — lifted surface with grain -->
-    <section class="scenario scenario--audience scenario--flipped"
+    <section class="scenario scenario--audience scenario--flipped grain"
         data-prompt="We're thinking about moving into the education sector. Where would we even start?">
         <div class="scenario-grid">
             <div class="scenario-title">
@@ -985,50 +757,12 @@
     </section>
 
     <!-- S5: CTA -->
-    <section class="contact" id="contact">
-        <div class="contact-inner">
-            <p class="section-label reveal">Get Started</p>
-            <h2 class="reveal">Ready to see what's&nbsp;possible?</h2>
-            <p class="contact-sub reveal">Tell me about your business. I'll show you what's possible.</p>
-            <a href="mailto:hello@redslashstudio.com" class="contact-email reveal">hello@redslashstudio.com</a>
-            <p class="contact-or reveal">or</p>
-            <form class="contact-form reveal" id="contact-form" action="https://formspree.io/f/mwvwedqe" method="POST">
-                <div class="form-group">
-                    <label for="name">Name</label>
-                    <input type="text" id="name" name="name" required>
-                </div>
-                <div class="form-group">
-                    <label for="email">Email</label>
-                    <input type="email" id="email" name="email" required>
-                </div>
-                <div class="form-group">
-                    <label for="message">Tell me about your business</label>
-                    <textarea id="message" name="message" required></textarea>
-                </div>
-                <button type="submit" class="form-submit">Send <span class="arrow">&rarr;</span></button>
-            </form>
-        </div>
-    </section>
+    <section class="contact" id="contact" data-heading="Ready to see what's&nbsp;possible?" data-sub="Tell me about your business. I'll show you what's possible."></section>
 
     <footer></footer>
 
     <script src="shared.js"></script>
     <script>
-        // === Staggered lens card reveals ===
-        const lensCards = document.querySelectorAll('.lens-card.reveal');
-        const lensObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    const cards = entry.target.parentElement.querySelectorAll('.lens-card');
-                    cards.forEach((card, i) => {
-                        setTimeout(() => card.classList.add('visible'), i * 150);
-                    });
-                    lensObserver.unobserve(entry.target);
-                }
-            });
-        }, { threshold: 0.1 });
-        if (lensCards.length) lensObserver.observe(lensCards[0]);
-
         // === Typewriter engine ===
         function typeText(el, text, onComplete) {
             el.textContent = '';

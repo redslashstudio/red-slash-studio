@@ -114,24 +114,6 @@
             margin-bottom: 24px;
         }
 
-        .project-card-link {
-            font-size: 14px;
-            font-weight: 600;
-            letter-spacing: 0.06em;
-            color: var(--text-warm);
-            text-decoration: none;
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .project-card-link .arrow {
-            transition: transform 0.25s ease;
-        }
-
-        .project-card:hover .project-card-link .arrow {
-            transform: translateX(4px);
-        }
 
         /* === RESPONSIVE === */
         @media (max-width: 900px) {
@@ -160,9 +142,9 @@
 
     <!-- HERO -->
     <section class="projects-hero">
-        <p class="section-label reveal" style="text-align: center;">Selected Projects</p>
-        <h2 class="section-heading reveal" style="text-align: center;">Four businesses.<br>Four gaps.<br>One approach.</h2>
-        <p class="section-intro reveal" style="text-align: center; max-width: 640px; margin: 0 auto;">I find the gap between what a business actually is and how it presents itself — then I close it.</p>
+        <p class="section-label reveal text-center">Selected Projects</p>
+        <h2 class="section-heading reveal text-center">Four businesses.<br>Four fresh starts.<br>One approach.</h2>
+        <p class="section-intro reveal text-center" style="max-width: 640px; margin: 0 auto;">I find the gap between what a business actually is and how it presents itself — then I close it.</p>
     </section>
 
     <!-- PROJECTS -->
@@ -177,7 +159,7 @@
                 <p class="project-card-sector">Media</p>
                 <h3 class="project-card-name">Fighting for a Free&nbsp;Future</h3>
                 <p class="project-card-desc">A political movement with real momentum — Substack subscribers, two podcasts, a coalition of think tanks — but a website that didn't show any of it. Rebuilt as an editorial media brand.</p>
-                <span class="project-card-link">Read the case study <span class="arrow">&rarr;</span></span>
+                <span class="cta-link">Read more <span class="arrow">&rarr;</span></span>
             </div>
         </a>
 
@@ -190,7 +172,7 @@
                 <p class="project-card-sector">Events</p>
                 <h3 class="project-card-name">The Podcast Show&nbsp;London</h3>
                 <p class="project-card-desc">The world's largest podcast festival — 10,000 attendees, 450+ speakers, two days at the BDC. An event that had outgrown its front door.</p>
-                <span class="project-card-link">Read the case study <span class="arrow">&rarr;</span></span>
+                <span class="cta-link">Read more <span class="arrow">&rarr;</span></span>
             </div>
         </a>
 
@@ -203,7 +185,7 @@
                 <p class="project-card-sector">Healthcare</p>
                 <h3 class="project-card-name">CareADHD</h3>
                 <p class="project-card-desc">A private ADHD clinic with a clear assessment process — but a journey page that talked patients through a flowchart instead of holding their hand. Redesigned around what the patient is actually feeling.</p>
-                <span class="project-card-link">Read the case study <span class="arrow">&rarr;</span></span>
+                <span class="cta-link">Read more <span class="arrow">&rarr;</span></span>
             </div>
         </a>
 
@@ -216,40 +198,14 @@
                 <p class="project-card-sector">Property</p>
                 <h3 class="project-card-name">MF Freeman</h3>
                 <p class="project-card-desc">An award-winning zero-carbon developer with sixty years of family heritage — but a group website that read like a corporate directory. Rebuilt as a proof structure for what they actually do.</p>
-                <span class="project-card-link">Read the case study <span class="arrow">&rarr;</span></span>
+                <span class="cta-link">Read more <span class="arrow">&rarr;</span></span>
             </div>
         </a>
 
     </section>
 
     <!-- CONTACT -->
-    <section class="contact" id="contact">
-        <div class="contact-inner">
-            <p class="section-label reveal">Get in Touch</p>
-            <h2 class="reveal">Spot something<br>familiar?</h2>
-            <p class="contact-sub reveal">No pitch. No commitment. Just a conversation about where you are and what could be different.</p>
-
-            <a href="mailto:hello@redslashstudio.com" class="contact-email reveal">hello@redslashstudio.com</a>
-
-            <p class="contact-or reveal">or</p>
-
-            <form class="contact-form reveal" id="contact-form" action="https://formspree.io/f/mwvwedqe" method="POST">
-                <div class="form-group">
-                    <label for="name">Your Name</label>
-                    <input type="text" id="name" name="name" placeholder="Tom Richardson">
-                </div>
-                <div class="form-group">
-                    <label for="email">Email</label>
-                    <input type="email" id="email" name="email" placeholder="tom@example.com">
-                </div>
-                <div class="form-group">
-                    <label for="message">What does your business do?</label>
-                    <textarea id="message" name="message" placeholder="Tell me a bit about your business and what you're looking for..."></textarea>
-                </div>
-                <button type="submit" class="form-submit">Send Message <span class="arrow">&rarr;</span></button>
-            </form>
-        </div>
-    </section>
+    <section class="contact" id="contact" data-heading="Spot something<br>familiar?" data-sub="No pitch. No commitment. Just a conversation about where you are and what could be different."></section>
 
     <footer></footer>
 

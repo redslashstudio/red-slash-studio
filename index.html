@@ -70,47 +70,11 @@
             margin-bottom: 48px;
         }
 
-        .hero-cta {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            font-size: 13px;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.14em;
-            color: var(--red-label);
-            text-decoration: none;
-            transition: color 0.25s ease;
-        }
-
-        .hero-cta:hover {
-            color: var(--red-glow);
-        }
-
-        .hero-cta .arrow {
-            transition: transform 0.25s ease;
-        }
-
-        .hero-cta:hover .arrow {
-            transform: translateX(4px);
-        }
 
         /* === YOUR TEAM === */
         .team {
             background: var(--near-black);
             padding: 120px 48px;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .team::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
-            background-size: 256px;
-            pointer-events: none;
-            opacity: 0.5;
         }
 
         .team-inner {
@@ -142,106 +106,11 @@
             max-width: 560px;
         }
 
-        .team-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 0;
-        }
-
-        .team-card {
-            padding: 48px 40px;
-            border-top: 1px solid var(--border);
-            transition: border-color 0.3s ease, background 0.3s ease;
-            position: relative;
-        }
-
-        .team-card::after {
-            content: '';
-            position: absolute;
-            top: 48px;
-            bottom: 48px;
-            right: 0;
-            width: 1px;
-            background: var(--border);
-        }
-
-        .team-card:last-child::after {
-            display: none;
-        }
-
-        .team-card:hover {
-            border-top-color: var(--red);
-            background: rgba(226, 54, 54, 0.03);
-        }
-
-        .team-card-label {
-            font-size: 12px;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.14em;
-            color: var(--text-muted);
-            margin-bottom: 20px;
-        }
-
-        .team-card h3 {
-            font-family: var(--display);
-            font-size: clamp(22px, 2.2vw, 28px);
-            letter-spacing: -0.01em;
-            margin-bottom: 20px;
-            line-height: 1.2;
-        }
-
-        .team-card h3 .prefix {
-            color: var(--red);
-            font-weight: 800;
-            margin-right: 0.08em;
-        }
-
-        .team-card h3 .fixed {
-            color: var(--text-warm);
-            font-weight: 700;
-        }
-
-        .team-card h3 .variable {
-            color: var(--warm-mid);
-            font-weight: 500;
-        }
-
-        .team-card-body {
-            font-size: 15px;
-            font-weight: 400;
-            line-height: 1.7;
-            color: var(--text-secondary);
-        }
 
         .team-cta {
             margin-top: 64px;
         }
 
-        .team-cta a {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            font-size: 13px;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.14em;
-            color: var(--red-label);
-            text-decoration: none;
-            transition: color 0.25s ease;
-        }
-
-        .team-cta a:hover {
-            color: var(--red-glow);
-        }
-
-        .team-cta a .arrow {
-            transition: transform 0.25s ease;
-        }
-
-        .team-cta a:hover .arrow {
-            transform: translateX(4px);
-        }
 
         /* === PROOF — project snapshots === */
         .proof {
@@ -334,23 +203,6 @@
             margin-bottom: 24px;
         }
 
-        .proof-featured-link {
-            font-size: 14px;
-            font-weight: 600;
-            letter-spacing: 0.06em;
-            color: var(--text-warm);
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .proof-featured-link .arrow {
-            transition: transform 0.25s ease;
-        }
-
-        .proof-featured:hover .proof-featured-link .arrow {
-            transform: translateX(4px);
-        }
 
         /* Smaller project cards — three across */
         .proof-grid {
@@ -413,30 +265,6 @@
             text-align: center;
         }
 
-        .proof-all a {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            font-size: 13px;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.14em;
-            color: var(--red-label);
-            text-decoration: none;
-            transition: color 0.25s ease;
-        }
-
-        .proof-all a:hover {
-            color: var(--red-glow);
-        }
-
-        .proof-all a .arrow {
-            transition: transform 0.25s ease;
-        }
-
-        .proof-all a:hover .arrow {
-            transform: translateX(4px);
-        }
 
         /* === ABOUT === */
         .about {
@@ -545,18 +373,6 @@
             .proof { padding: 80px 24px; }
             .about { padding: 80px 24px; }
 
-            .team-grid {
-                grid-template-columns: 1fr;
-                gap: 0;
-            }
-
-            .team-card::after {
-                display: none;
-            }
-
-            .team-card {
-                border-top: 1px solid var(--border);
-            }
 
             .proof-featured {
                 grid-template-columns: 1fr;
@@ -587,7 +403,7 @@
     <section class="hero">
         <h1>What if you could look as good as you actually&nbsp;are?</h1>
         <p class="hero-sub">Your business does great work. But the website, the brand, the way it shows up — it's not telling that story. Not&nbsp;yet.</p>
-        <a href="#team" class="hero-cta">Let's change that <span class="arrow">&rarr;</span></a>
+        <a href="#team" class="cta-link">Let's change that <span class="arrow">&rarr;</span></a>
     </section>
 
     <!-- BRIDGE -->
@@ -597,7 +413,7 @@
     </section>
 
     <!-- S2: YOUR TEAM — the product -->
-    <section class="team" id="team">
+    <section class="team grain" id="team">
         <div class="team-inner">
             <div class="team-header">
                 <p class="section-label reveal">How It Works</p>
@@ -605,28 +421,28 @@
                 <p class="reveal">Who you're trying to reach, what they need to hear, and whether the way you're showing up is doing that justice. That's the foundation — the website is where it starts. Then I build you something most businesses your size never get: a dedicated creative team, built around your brand and available whenever you need&nbsp;them.</p>
             </div>
 
-            <div class="team-grid">
-                <div class="team-card reveal">
-                    <p class="team-card-label">Your Strategist</p>
+            <div class="specialist-grid specialist-grid--dark stagger-reveal">
+                <div class="specialist-card reveal">
+                    <p class="specialist-card-label">Your Strategist</p>
                     <h3><span class="prefix">/</span><span class="fixed">RedSlash</span><span class="variable">Audience</span></h3>
-                    <p class="team-card-body">Knows who you're talking to and what they need to hear. Gut check a new direction, explore who a campaign should target, or pressure-test whether your messaging is&nbsp;landing.</p>
+                    <p class="specialist-card-body">Knows who you're talking to and what they need to hear. Gut check a new direction, explore who a campaign should target, or pressure-test whether your messaging is&nbsp;landing.</p>
                 </div>
 
-                <div class="team-card reveal">
-                    <p class="team-card-label">Your Brand Thinker</p>
+                <div class="specialist-card reveal">
+                    <p class="specialist-card-label">Your Brand Thinker</p>
                     <h3><span class="prefix">/</span><span class="fixed">RedSlash</span><span class="variable">Brand</span></h3>
-                    <p class="team-card-body">Knows what your business needs to say and how to say it. Talk through a new idea, debate the right tone, or work out what a piece of communication actually needs to&nbsp;land.</p>
+                    <p class="specialist-card-body">Knows what your business needs to say and how to say it. Talk through a new idea, debate the right tone, or work out what a piece of communication actually needs to&nbsp;land.</p>
                 </div>
 
-                <div class="team-card reveal">
-                    <p class="team-card-label">Your Creative Director</p>
+                <div class="specialist-card reveal">
+                    <p class="specialist-card-label">Your Creative Director</p>
                     <h3><span class="prefix">/</span><span class="fixed">RedSlash</span><span class="variable">Creative</span></h3>
-                    <p class="team-card-body">Knows your visual language and makes sure everything belongs. Explore a new visual direction, build a pitch deck, or get a second opinion on whether something feels&nbsp;right.</p>
+                    <p class="specialist-card-body">Knows your visual language and makes sure everything belongs. Explore a new visual direction, build a pitch deck, or get a second opinion on whether something feels&nbsp;right.</p>
                 </div>
             </div>
 
             <div class="team-cta reveal">
-                <a href="how-it-works.html#in-practice">See them in action <span class="arrow">&rarr;</span></a>
+                <a href="how-it-works.html#in-practice" class="cta-link">See them in action <span class="arrow">&rarr;</span></a>
             </div>
         </div>
     </section>
@@ -636,8 +452,8 @@
         <div class="proof-inner">
             <div class="proof-header">
                 <p class="section-label reveal">Selected Projects</p>
-                <h2 class="reveal">Four businesses.<br>Four stories.</h2>
-                <p class="reveal">Every project starts the same way: a business that's outgrown how it presents itself. Here's what that looks&nbsp;like.</p>
+                <h2 class="reveal">Four businesses.<br>Four fresh starts.</h2>
+                <p class="reveal">Every project starts the same way: a business that's outgrown how it presents&nbsp;itself.</p>
             </div>
 
             <!-- Featured: FFF -->
@@ -649,7 +465,7 @@
                     <p class="proof-featured-sector">Media</p>
                     <h3 class="proof-featured-name">Fighting for a Free&nbsp;Future</h3>
                     <p class="proof-featured-desc">A political movement with real momentum — Substack subscribers, two podcasts, a coalition of think tanks — but a website that didn't show any of it. Rebuilt as an editorial media&nbsp;brand.</p>
-                    <span class="proof-featured-link">Read the case study <span class="arrow">&rarr;</span></span>
+                    <span class="cta-link">Read more <span class="arrow">&rarr;</span></span>
                 </div>
             </a>
 
@@ -684,7 +500,7 @@
             </div>
 
             <div class="proof-all reveal">
-                <a href="projects.html">All projects <span class="arrow">&rarr;</span></a>
+                <a href="projects.html" class="cta-link">All projects <span class="arrow">&rarr;</span></a>
             </div>
         </div>
     </section>
@@ -693,7 +509,7 @@
     <section class="about" id="about">
         <div class="about-inner">
             <div class="about-image-col reveal">
-                <img src="assets/charlie-profile.png" alt="Charlie Palmer" style="width: 100%; height: auto; object-fit: contain; border-radius: 8px; mix-blend-mode: lighten;">
+                <img src="assets/charlie-profile.png" alt="Charlie Palmer" class="img-profile">
             </div>
             <div class="about-text">
                 <p class="section-label reveal">About</p>
@@ -722,33 +538,7 @@
     </section>
 
     <!-- S5: CONTACT -->
-    <section class="contact" id="contact">
-        <div class="contact-inner">
-            <p class="section-label reveal">Get in Touch</p>
-            <h2 class="reveal">Tell me about<br>your challenge.</h2>
-            <p class="contact-sub reveal">No pitch. No commitment. Just a conversation about where you are and what could be different.</p>
-
-            <a href="mailto:hello@redslashstudio.com" class="contact-email reveal">hello@redslashstudio.com</a>
-
-            <p class="contact-or reveal">or</p>
-
-            <form class="contact-form reveal" id="contact-form" action="https://formspree.io/f/mwvwedqe" method="POST">
-                <div class="form-group">
-                    <label for="name">Your Name</label>
-                    <input type="text" id="name" name="name" placeholder="Tom Richardson">
-                </div>
-                <div class="form-group">
-                    <label for="email">Email</label>
-                    <input type="email" id="email" name="email" placeholder="tom@example.com">
-                </div>
-                <div class="form-group">
-                    <label for="message">What does your business do?</label>
-                    <textarea id="message" name="message" placeholder="Tell me a bit about your business and what you're looking for..."></textarea>
-                </div>
-                <button type="submit" class="form-submit">Send Message <span class="arrow">&rarr;</span></button>
-            </form>
-        </div>
-    </section>
+    <section class="contact" id="contact" data-heading="Tell me about<br>your challenge." data-sub="No pitch. No commitment. Just a conversation about where you are and what could be different."></section>
 
     <footer></footer>
 

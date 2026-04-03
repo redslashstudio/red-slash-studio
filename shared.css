@@ -180,6 +180,256 @@ nav.scrolled {
     margin-bottom: 64px;
 }
 
+/* === GRAIN TEXTURE OVERLAYS === */
+.grain {
+    position: relative;
+    overflow: hidden;
+}
+
+.grain::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+    background-size: 256px;
+    pointer-events: none;
+    opacity: 0.5;
+}
+
+.grain-fine {
+    position: relative;
+}
+
+.grain-fine::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.025'/%3E%3C/svg%3E");
+    background-size: 256px;
+    pointer-events: none;
+    opacity: 0.6;
+}
+
+/* === SPECIALIST CARD GRID (three-column team/lens cards) === */
+.specialist-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0;
+}
+
+.specialist-card {
+    padding: 48px 40px;
+    transition: border-color 0.3s ease, background 0.3s ease;
+    position: relative;
+}
+
+.specialist-card::after {
+    content: '';
+    position: absolute;
+    top: 48px;
+    bottom: 48px;
+    right: 0;
+    width: 1px;
+}
+
+.specialist-card:last-child::after {
+    display: none;
+}
+
+.specialist-card:hover {
+    background: rgba(226, 54, 54, 0.03);
+}
+
+.specialist-card-label {
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    color: var(--text-muted);
+    margin-bottom: 20px;
+}
+
+.specialist-card h3 {
+    font-family: var(--display);
+    letter-spacing: -0.01em;
+    margin-bottom: 20px;
+    line-height: 1.2;
+}
+
+.specialist-card h3 .prefix {
+    color: var(--red);
+    font-weight: 800;
+    margin-right: 0.08em;
+}
+
+.specialist-card h3 .fixed {
+    font-weight: 700;
+}
+
+.specialist-card h3 .variable {
+    font-weight: 500;
+}
+
+/* Dark background variant (homepage) */
+.specialist-grid--dark .specialist-card {
+    border-top: 1px solid var(--border);
+}
+
+.specialist-grid--dark .specialist-card::after {
+    background: var(--border);
+}
+
+.specialist-grid--dark .specialist-card:hover {
+    border-top-color: var(--red);
+}
+
+.specialist-grid--dark .specialist-card h3 {
+    font-size: clamp(22px, 2.2vw, 28px);
+}
+
+.specialist-grid--dark .specialist-card h3 .fixed {
+    color: var(--text-warm);
+}
+
+.specialist-grid--dark .specialist-card h3 .variable {
+    color: var(--warm-mid);
+}
+
+.specialist-grid--dark .specialist-card-body {
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 1.7;
+    color: var(--text-secondary);
+}
+
+/* Light background variant (how-it-works, pricing) */
+.specialist-grid--light .specialist-card {
+    border-top: 3px solid transparent;
+}
+
+.specialist-grid--light .specialist-card::after {
+    background: var(--border-light);
+}
+
+.specialist-grid--light .specialist-card:hover {
+    border-top-color: var(--red);
+}
+
+.specialist-grid--light .specialist-card h3 {
+    font-size: clamp(24px, 2.5vw, 30px);
+}
+
+.specialist-grid--light .specialist-card h3 .fixed {
+    color: var(--black);
+}
+
+.specialist-grid--light .specialist-card h3 .variable {
+    color: var(--text-muted);
+}
+
+.specialist-grid--light .specialist-card-body {
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 1.7;
+    color: var(--text-muted);
+}
+
+.specialist-card-uses {
+    list-style: none;
+}
+
+.specialist-card-uses li {
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 1.6;
+    color: var(--text-muted);
+    padding: 8px 0;
+    border-bottom: 1px solid rgba(0,0,0,0.06);
+}
+
+.specialist-card-uses li:last-child {
+    border-bottom: none;
+}
+
+@media (max-width: 900px) {
+    .specialist-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .specialist-card::after {
+        display: none;
+    }
+
+    .specialist-grid--dark .specialist-card {
+        border-top: 1px solid var(--border);
+    }
+
+    .specialist-grid--light .specialist-card {
+        padding: 32px 24px;
+        border-top: 1px solid var(--border-light);
+    }
+
+    .specialist-grid--light .specialist-card:hover {
+        border-top-color: var(--border-light);
+    }
+}
+
+/* === CTA LINK (red uppercase arrow pattern) === */
+.cta-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    color: var(--red-label);
+    text-decoration: none;
+    transition: color 0.25s ease;
+}
+
+.cta-link:hover {
+    color: var(--red-glow);
+}
+
+.cta-link .arrow {
+    transition: transform 0.25s ease;
+}
+
+.cta-link:hover .arrow {
+    transform: translateX(4px);
+}
+
+/* === UTILITY CLASSES === */
+.section-label--red {
+    color: var(--red);
+}
+
+.text-center {
+    text-align: center;
+}
+
+.img-profile {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    border-radius: 8px;
+    mix-blend-mode: lighten;
+}
+
+.link-subtle {
+    color: var(--text-secondary);
+    border-bottom: 1px solid var(--border);
+    text-decoration: none;
+}
+
+.link-red {
+    color: var(--red);
+    font-weight: 500;
+    text-decoration: none;
+    border-bottom: 1px solid var(--red);
+}
+
 /* === CONTACT (shared across pages) === */
 .contact {
     background: var(--off-white);
@@ -435,4 +685,352 @@ footer {
     }
 
     .section-heading { font-size: 28px; }
+}
+
+/* === CASE STUDY PAGES === */
+.cs-hero {
+    padding: 160px 48px 100px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.cs-hero h1 {
+    font-family: var(--display);
+    font-size: clamp(42px, 6vw, 72px);
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    line-height: 1.05;
+    color: var(--text-warm);
+    max-width: 860px;
+    margin-bottom: 32px;
+}
+
+.cs-hero-sub {
+    font-size: clamp(17px, 2vw, 20px);
+    font-weight: 300;
+    line-height: 1.6;
+    color: var(--text-secondary);
+    max-width: 640px;
+    margin-bottom: 40px;
+}
+
+.cs-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.cs-tag {
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--text-muted);
+    padding: 8px 16px;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+}
+
+.cs-challenge {
+    background: var(--off-white);
+    padding: 120px 48px;
+}
+
+.cs-challenge-inner {
+    max-width: 720px;
+    margin: 0 auto;
+}
+
+.cs-challenge .section-heading {
+    color: var(--text-on-light-strong);
+}
+
+.cs-challenge p {
+    font-size: 17px;
+    font-weight: 400;
+    line-height: 1.8;
+    color: var(--text-on-light);
+    margin-bottom: 24px;
+}
+
+.cs-challenge p:last-child {
+    margin-bottom: 0;
+}
+
+.cs-challenge p strong {
+    font-weight: 600;
+    color: var(--text-on-light-strong);
+}
+
+.cs-approach {
+    background: var(--near-black);
+    padding: 120px 48px;
+}
+
+.cs-approach-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.cs-approach-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    margin-top: 64px;
+}
+
+.cs-approach-left {
+    max-width: 520px;
+}
+
+.cs-move {
+    margin-bottom: 48px;
+}
+
+.cs-move:last-child {
+    margin-bottom: 0;
+}
+
+.cs-move-label {
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    color: var(--text-muted);
+    margin-bottom: 12px;
+}
+
+.cs-move h3 {
+    font-family: var(--display);
+    font-size: 24px;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    color: var(--text-warm);
+    margin-bottom: 12px;
+}
+
+.cs-move p {
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 1.7;
+    color: var(--text-secondary);
+}
+
+.cs-approach-right {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.cs-pullquote {
+    font-family: var(--display);
+    font-size: clamp(26px, 3vw, 36px);
+    font-weight: 600;
+    font-style: italic;
+    letter-spacing: -0.02em;
+    line-height: 1.3;
+    color: var(--text-warm);
+    border-left: 3px solid var(--red);
+    padding-left: 32px;
+}
+
+.cs-build {
+    background: var(--black);
+    padding: 120px 48px;
+}
+
+.cs-build-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.cs-build-iframe {
+    width: 100%;
+    border-radius: 8px;
+    overflow: hidden;
+    background: var(--surface);
+    aspect-ratio: 16 / 9;
+    position: relative;
+    margin-top: 64px;
+}
+
+.cs-build-iframe iframe {
+    width: 142.85%;
+    height: 142.85%;
+    border: none;
+    pointer-events: none;
+    transform: scale(0.7);
+    transform-origin: top left;
+}
+
+.cs-deliverables {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 48px;
+}
+
+.cs-deliverable {
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--text-secondary);
+    padding: 8px 16px;
+    background: var(--surface);
+    border-radius: 4px;
+    border: 1px solid var(--border);
+}
+
+.cs-response {
+    background: var(--near-black);
+    padding: 120px 48px;
+}
+
+.cs-response-inner {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.cs-quote {
+    font-family: var(--display);
+    font-size: clamp(32px, 5vw, 56px);
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    line-height: 1.1;
+    color: var(--text-warm);
+    margin-bottom: 32px;
+}
+
+.cs-quote-mark {
+    color: var(--red);
+    display: block;
+    font-size: 72px;
+    line-height: 0.5;
+    margin-bottom: 24px;
+}
+
+.cs-attribution {
+    font-size: 15px;
+    font-weight: 400;
+    color: var(--text-secondary);
+    line-height: 1.6;
+}
+
+.cs-attribution strong {
+    color: var(--text-warm);
+    font-weight: 600;
+}
+
+@media (max-width: 900px) {
+    .cs-hero { padding: 140px 24px 80px; }
+    .cs-challenge { padding: 80px 24px; }
+    .cs-approach { padding: 80px 24px; }
+    .cs-build { padding: 80px 24px; }
+    .cs-response { padding: 80px 24px; }
+
+    .cs-approach-content {
+        grid-template-columns: 1fr;
+        gap: 48px;
+    }
+}
+
+@media (max-width: 600px) {
+    .cs-hero h1 { font-size: 36px; }
+    .cs-quote { font-size: 28px; }
+}
+
+/* === LEGAL PAGES === */
+.legal-page {
+    padding: 160px 48px 120px;
+    max-width: 720px;
+    margin: 0 auto;
+}
+
+.legal-page h1 {
+    font-family: var(--display);
+    font-size: clamp(32px, 4vw, 48px);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    color: var(--text-warm);
+    margin-bottom: 16px;
+}
+
+.legal-page .legal-updated {
+    font-size: 13px;
+    color: var(--text-muted);
+    margin-bottom: 48px;
+}
+
+.legal-page h2 {
+    font-family: var(--display);
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    color: var(--text-warm);
+    margin-top: 48px;
+    margin-bottom: 16px;
+}
+
+.legal-page p {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.8;
+    color: var(--text-secondary);
+    margin-bottom: 16px;
+}
+
+.legal-page a {
+    color: var(--text-secondary);
+    border-bottom: 1px solid var(--border);
+    text-decoration: none;
+}
+
+.legal-page dt {
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    color: var(--text-muted);
+    margin-bottom: 8px;
+    margin-top: 32px;
+}
+
+.legal-page dt:first-of-type {
+    margin-top: 0;
+}
+
+.legal-page dd {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.7;
+    color: var(--text-secondary);
+}
+
+.legal-page ul {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 16px;
+}
+
+.legal-page ul li {
+    font-size: 16px;
+    line-height: 1.8;
+    color: var(--text-secondary);
+    padding-left: 20px;
+    position: relative;
+}
+
+.legal-page ul li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 12px;
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background: var(--text-muted);
+}
+
+@media (max-width: 600px) {
+    .legal-page { padding: 140px 24px 80px; }
 }
